@@ -1,0 +1,24 @@
+.ui-form-control {
+  &.picker {
+    width: 220px;
+    min-width: 220px;
+
+    .ui-form-control {
+      &__input {
+        &-container {
+          border: none;
+        }
+
+        &.picker-input {
+          input {
+            padding: 0;
+          }
+
+          fieldset {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@import '@/styles/variables.scss';
+
+.ui-button {
+  &.MuiButton-root {
+    border-radius: 1.625rem;
+    text-transform: none;
+    font-size: $rem-base;
+    font-weight: $font-weight-semi-bold;
+  }
+}

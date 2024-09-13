@@ -1,0 +1,21 @@
+@import '@/styles/variables.scss';
+@import '@/styles/colors.scss';
+
+.ui-banner {
+  position: relative;
+  width: 311px;
+  height: 143px;
+  border: 1px solid $accent-pink;
+  border-radius: $padding-small;
+  box-sizing: border-box;
+  padding: 20px 20px 20px 97px;
+
+  &__icon {
+    position: absolute;
+    left: -11px;
+  }
+
+  &__text {
+    padding: 0 0 10px;
+  }
+}

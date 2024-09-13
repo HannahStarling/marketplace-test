@@ -1,0 +1,12 @@
+.custom-dot {
+  width: 40px; /* Ширина мини-версии */
+  height: 40px; /* Высота мини-версии */
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.custom-dot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

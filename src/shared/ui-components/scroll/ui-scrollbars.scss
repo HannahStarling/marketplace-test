@@ -1,0 +1,14 @@
+.ui-scrollbars div {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    width: 4px;
+    height: 100px;
+    border-radius: 24px;
+    background: var(--chakra-colors-neutrals-450);
+  }
+}
+
+

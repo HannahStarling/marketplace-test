@@ -1,0 +1,16 @@
+.ui-input-search {
+  input {
+    padding: 15px 20px;
+  }
+
+  &__button {
+    &.ui-icon-button {
+      background-color: var(--accent-grey);
+      width: 94px;
+      height: 42px;
+      padding: 11px 0 11px 0;
+      border-radius: 41px;
+    }
+  }
+}
+
