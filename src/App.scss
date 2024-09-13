@@ -1,0 +1,45 @@
+@import '@/styles/variables.scss';
+@import "@/styles/mixins.scss";
+@import "@/styles/colors.scss";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+// Цветовые переменные
+:root {
+  --accent-pink: #FF2D87;
+  --accent-light-pink: #FF7CB4;
+  --accent-green: #58CF18;
+  --accent-blue: #2967FF;
+  --primary-border: #AEC2EA;
+  --accent-yellow: #FFA601;
+  --secondary-white: #FFFFFF;
+  --accent-grey: #F0F4FB;
+  --primary-grey: #F8F8F8;
+  --secondary-grey: #8D8D8E;
+  --primary-body: #727280;
+  --primary-dark: #2D2D2F;
+}
+
+// Базовые стили
+html {
+  box-sizing: border-box;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  font-size: $font-size-base;
+
+  @include respond-to(md) {
+    font-size: 14px;
+  }
+
+  @include respond-to(sm) {
+    font-size: 12px;
+  }
+}
