@@ -1,0 +1,40 @@
+@import '@/styles/variables.scss';
+@import "@/styles/mixins.scss";
+@import "@/styles/colors.scss";
+
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    'header aside'
+    'main aside'
+    'footer footer';
+  grid-template-columns: 1fr 21.875rem; // 350px в rem
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+
+  @include respond-to(sm) {
+    grid-template-areas:
+    'header'
+    'main'
+    'footer';
+    grid-template-columns: 1fr
+  }
+
+  // Основной контент
+  .main {
+    grid-area: main;
+    @include content-padding();
+  }
+
+  // Боковая панель
+  .aside {
+    box-sizing: border-box;
+    grid-area: aside;
+    padding: $padding-small;
+    border-left: 1px solid var(--accent-grey);
+
+    @include respond-to(sm) {
+      display: none;
+    }
+  }
+}
