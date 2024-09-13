@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography } from '@mui/material';
-import { UiLink } from '@/components/links/ui-link';
+import { UiLink } from '@/shared/ui-components/links/ui-link';
 
 interface FooterLinksProps {
   title: string;

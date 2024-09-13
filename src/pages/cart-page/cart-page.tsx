@@ -5,7 +5,7 @@ import { CartView } from '@/views/cart/cart-view';
 
 export const CartPage: FC = () => {
   return (
-    <Page className="cart" title="Корзина">
+    <Page className="cart" title="Корзина" showGoBack={false}>
       <CartView />
     </Page>
   );

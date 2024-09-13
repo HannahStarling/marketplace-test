@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { Typography } from '@mui/material';
 import { Logo } from '@/components/layout/logo/logo';
 import { FooterLinks } from '@/components/layout/footer/footer-links';
-import { UiLink } from '@/components/links/ui-link';
+import { UiLink } from '@/shared/ui-components/links/ui-link';
 import { useFooterLinks } from '@/features/layout/footer/hooks/use-footer-links';
 
 export const Footer: FC = () => {

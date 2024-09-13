@@ -2,42 +2,38 @@ import { FC } from 'react';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { useNavigate } from 'react-router-dom';
 import { Typography } from '@mui/material';
-import { Box } from '@mui/system';
+import { Box, styled } from '@mui/system';
+
+const StyledBox = styled(Box)({
+  cursor: 'pointer',
+  display: 'flex',
+  alignItems: 'center',
+  gap: '5px',
+});
+
+const StyledIcon = styled(ArrowBackIosNewIcon)({
+  color: '#2967FF',
+  fontSize: '16px',
+  fontWeight: 600,
+});
+
+const StyledTypography = styled(Typography)({
+  color: '#2967FF',
+  fontSize: '16px',
+  fontWeight: 600,
+});
 
 export const BackButton: FC = () => {
   const navigate = useNavigate();
 
   const handleGoBack = () => {
-    navigate(-1); // Возвращает на предыдущую страницу
+    navigate(-1);
   };
 
   return (
-    <Box
-      onClick={handleGoBack}
-      sx={{
-        cursor: 'pointer',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '5px',
-      }}
-    >
-      <ArrowBackIosNewIcon
-        sx={{
-          color: '#2967FF',
-          fontSize: '16px',
-          fontWeight: 600,
-        }}
-      />
-      <Typography
-        variant="subtitle2"
-        sx={{
-          color: '#2967FF',
-          fontSize: '16px',
-          fontWeight: 600,
-        }}
-      >
-        Назад
-      </Typography>
-    </Box>
+    <StyledBox onClick={handleGoBack}>
+      <StyledIcon />
+      <StyledTypography variant="subtitle2">Назад</StyledTypography>
+    </StyledBox>
   );
 };

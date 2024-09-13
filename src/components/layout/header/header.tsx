@@ -5,11 +5,9 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { UiSearchInput } from '@/shared/ui-components/inputs/ui-input-search/ui-input-search';
 import { UiAvatar } from '@/shared/ui-components/avatar/ui-avatar';
 import { Logo } from '@/components/layout/logo/logo';
-import { CartButton } from '@/components/buttons/cart-button';
+import { CartButton } from '@/components/buttons/cart';
 
-interface IProps {}
-
-export const Header: FC<IProps> = () => {
+export const Header: FC = () => {
   return (
     <header className="header">
       <Logo />

@@ -5,7 +5,7 @@ import { OrderCheckoutView } from '@/views/order/order-checkout/order-checkout-v
 
 export const OrderCheckoutPage: FC = () => {
   return (
-    <Page title="Доставка" className="order-checkout">
+    <Page title="Доставка" className="order-checkout" showGoBack={false}>
       <OrderCheckoutView />
     </Page>
   );

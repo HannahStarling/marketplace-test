@@ -5,7 +5,7 @@ import { OrderHistoryView } from '@/views/order/order-history/order-history-view
 
 export const OrderHistoryPage: FC = () => {
   return (
-    <Page className="order-history" title="История заказов">
+    <Page className="order-history" title="История заказов" showGoBack={false}>
       <OrderHistoryView />
     </Page>
   );

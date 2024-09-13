@@ -6,11 +6,12 @@ import { IProps } from '@/types/common';
 
 interface IUiQuantityProps extends IProps {
   quantity: number;
-  onQuantityChange: (newQuantity: number) => void;
   max?: number;
+
+  onQuantityChange(newQuantity: number): void;
 }
 
-export const UiQuantity: FC<IUiQuantityProps> = ({ quantity, onQuantityChange, max = Number.MAX_SAFE_INTEGER, className }) => {
+export const UiQuantity: FC<IUiQuantityProps> = ({ quantity, max = Number.MAX_SAFE_INTEGER, onQuantityChange, className }) => {
   const handleIncrease = () => {
     onQuantityChange(quantity + 1);
   };
@@ -31,7 +32,7 @@ export const UiQuantity: FC<IUiQuantityProps> = ({ quantity, onQuantityChange, m
       <IconButton className={`${className}-button-decrease quantity__button-decrease`} onClick={handleDecrease}>
         <RemoveIcon className={`${className}-button-decrease-icon quantity__button-decrease-icon`} />
       </IconButton>
-      <InputBase type="number" className={`${className}-input quantity__input`} value={quantity} onChange={handleInputChange} />
+      <InputBase inputProps={{ max }} type="number" className={`${className}-input quantity__input`} value={quantity} onChange={handleInputChange} />
       <IconButton className={`${className}-button-increase quantity__button-increase`} onClick={handleIncrease}>
         <AddIcon className={`${className}-button-increase quantity__button-increase-icon`} />
       </IconButton>

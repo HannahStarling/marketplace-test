@@ -5,16 +5,24 @@ import { Box, CircularProgress } from '@mui/material';
 import { UiScrollbars } from './ui-scrollbars';
 import { IProps } from '@/types/common';
 
-export interface InfiniteScrollProps extends IProps {
-  callback: () => void; // Колбэк для подгрузки данных
+export interface InfiniteScrollProps<T> extends IProps {
+  callback: VoidFunction; // Колбэк для подгрузки данных
   loading?: boolean;
   viewHeight?: string; // Высота контейнера
   threshold?: number; // Порог видимости
   skip?: boolean;
-  data?: any;
+  data?: T[];
 }
 
-export const InfiniteScroll = ({ children, data, callback, loading, viewHeight = '90vh', threshold = 0.8, skip = false }: InfiniteScrollProps) => {
+export const InfiniteScroll = <T,>({
+  children,
+  data,
+  callback,
+  loading,
+  viewHeight = '90vh',
+  threshold = 0.8,
+  skip = false,
+}: InfiniteScrollProps<T>) => {
   const { ref, inView } = useInView({ threshold, skip });
 
   useEffect(() => {

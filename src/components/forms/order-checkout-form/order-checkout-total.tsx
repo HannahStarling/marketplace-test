@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { Box, Typography } from '@mui/material';
 import { toPriceFormat } from '@shared/helpers/to-price-format';
+import { UiParagraph } from '@ui-components/typography/ui-paragraph/ui-paragraph';
 import { UiButton } from '@/shared/ui-components/buttons/ui-button/ui-button';
 
 interface IOrderCheckoutTotalProps {
@@ -11,42 +11,16 @@ interface IOrderCheckoutTotalProps {
 
 export const OrderCheckoutTotal: FC<IOrderCheckoutTotalProps> = ({ cartPrice, totalPrice, deliveryPrice }) => {
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '10px',
-        width: '292px',
-      }}
-    >
-      <Box
-        sx={{
-          height: '122px',
-          borderRadius: '20px',
-          background: '#F0F4FB',
-          padding: '20px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '5px',
-        }}
-      >
-        <Typography sx={{ color: '#727280' }}>Стоимость товаров {toPriceFormat(cartPrice)}</Typography>
-        <Typography sx={{ color: '#727280' }}>Стоимость доставки {toPriceFormat(deliveryPrice)}</Typography>
-        <Typography sx={{ color: '#727280', display: 'flex', justifyContent: 'space-between', paddingTop: '10px' }}>
+    <div className="order-checkout__total">
+      <div className="order-checkout__total-prices">
+        <UiParagraph className="order-checkout__total-prices-label">Стоимость товаров {toPriceFormat(cartPrice)}</UiParagraph>
+        <UiParagraph className="order-checkout__total-prices-label">Стоимость доставки {toPriceFormat(deliveryPrice)}</UiParagraph>
+        <UiParagraph className="order-checkout__total-prices-label order-checkout__total-prices-label_total">
           Итого:
-          <Typography
-            sx={{
-              fontSize: '16px',
-              fontWeight: 600,
-              color: '#2D2D2F',
-            }}
-            component="span"
-          >
-            {toPriceFormat(cartPrice)}
-          </Typography>
-        </Typography>
-      </Box>
+          <span className="accent">{toPriceFormat(totalPrice)}</span>
+        </UiParagraph>
+      </div>
       <UiButton type="submit">Сделать заказ</UiButton>
-    </Box>
+    </div>
   );
 };

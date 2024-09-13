@@ -5,9 +5,7 @@ import classNames from 'classnames';
 import useNavigateToPath from '@shared/hooks/use-navigate-to-path';
 import { IProps } from '@/types/common';
 
-interface LogoProps extends IProps {}
-
-export const Logo: FC<LogoProps> = ({ className, children = 'React', ...props }) => {
+export const Logo: FC<IProps> = ({ className, children = 'React', ...props }) => {
   const navigateToStart = useNavigateToPath('/');
 
   return (

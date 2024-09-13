@@ -33,34 +33,34 @@
     }
   }
 
-
-  &-total {
-    @include flex-column($gap-small);
-
+  &__total {
     width: 292px;
+    @include flex-space-between(column, center, $gap-small);
 
-    &__price-box {
-      height: 122px;
-      border-radius: 20px;
+    &-prices {
+      @include flex-column(calc(#{$gap-xxsmall} / 2));
+      min-height: 122px;
+      border-radius: $padding-small;
       background: $accent-grey;
       padding: $padding-small;
-      @include flex-column($gap-xxsmall);
-    }
+      width: 100%;
 
-    &__label {
-      color: $primary-body;
-    }
+      &-label {
+        color: $primary-body;
 
-    &__total {
-      @include flex-space-between(column, center, $gap-xxsmall);
-      padding-top: $gap-xxsmall;
-      color: $primary-body;
+        &_total {
+          @include flex-space-between();
+          padding-top: $gap-xxsmall;
+        }
 
-      &-value {
-        font-size: $rem-base;
-        font-weight: $font-weight-semi-bold;
-        color: $primary-dark;
+        .accent {
+          font-size: $rem-base;
+          font-weight: 600;
+          color: $primary-dark;
+        }
       }
     }
+
+
   }
 }
