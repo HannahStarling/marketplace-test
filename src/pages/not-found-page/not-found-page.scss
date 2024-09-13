@@ -1,0 +1,12 @@
+@import '@/styles/variables.scss';
+@import "@/styles/mixins.scss";
+@import "@/styles/colors.scss";
+
+.not-found {
+  height: 100%;
+
+  &__content {
+    @include flex-center(column, center, center, $gap-small);
+    height: 100%;
+  }
+}
