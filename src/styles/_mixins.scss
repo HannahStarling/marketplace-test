@@ -1,0 +1,97 @@
+@import '@/styles/variables.scss';
+
+// _____________MEDIA_____________
+
+// Миксин для медиазапросов
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (max-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}
+
+// _____________BLOCKS_____________
+
+// Миксин для отступов контента
+@mixin content-padding {
+  padding-right: $padding-small;
+  padding-left: $padding-small;
+}
+
+// _____________FLEXBOXES_____________
+
+// Простые миксины для Flexbox
+@mixin flex-column($gap: $gap-medium) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin flex-row($gap: $gap-medium) {
+  display: flex;
+  flex-direction: row;
+  gap: $gap;
+}
+
+// Миксин для направления флекса
+@mixin flex-direction($direction) {
+  flex-direction: $direction;
+}
+
+
+// Миксины для выравнивания и распределения
+@mixin flex-center($direction: column, $justify: center, $align: center, $gap: $gap-medium) {
+  @include flex-direction($direction);
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin flex-space-between($direction: row, $align: center, $gap: $gap-medium) {
+  @include flex-direction($direction);
+  display: flex;
+  justify-content: space-between;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin flex-wrap($direction: row, $wrap: wrap, $gap: $gap-medium) {
+  @include flex-direction($direction);
+  display: flex;
+  flex-wrap: $wrap;
+  gap: $gap;
+}
+
+@mixin truncated($max-width) {
+  max-width: $max-width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin icon-button($color: $primary-border) {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  color: $color;
+  
+  svg {
+    color: $color;
+    width: inherit;
+    height: inherit;
+  }
+}

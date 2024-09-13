@@ -1,0 +1,43 @@
+// Основные единицы измерения
+$font-size-base: 16px; // Базовый размер шрифта
+$rem-base: 1rem; // 16px
+$em-base: 1em; // 16px
+// Размеры и шрифты
+$line-height-base: 1.4rem; // Примерная базовая высота строки (можете подстроить под ваши нужды)
+$line-height-small: 1.25rem; // Для маленьких текстов (например, 14px)
+
+// Размеры
+$header-height: 5.125rem; // 82px
+$max-width-location: 10.25rem; // 164px
+$margin-top-avatar: 0.625rem; // 10px
+
+// Отступы и интервалы
+$padding-xlarge: 5rem; //80px
+$padding-large: 3.125rem; // 50px
+$padding-medium: 2rem; // 32px
+$padding-small: 1.25rem; // 20px
+$gap-large: 1.9375rem; // 31px
+$gap-none: 0;
+$gap-medium: $padding-small;
+$gap-small: 1rem; // 16px
+$gap-xsmall: 0.875rem; // 14px
+$gap-xxsmall: 0.625rem; // 10px
+
+
+// Радиусы
+$border-radius-small: $padding-small;
+
+
+// Шрифты
+$font-size-xsmall: 0.75rem; // 12px
+$font-size-small: 0.875rem; // 14px
+$font-size-medium: $padding-small;
+$font-weight-regular: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+// Медиазапросы
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;

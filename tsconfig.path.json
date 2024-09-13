@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/@types"
+    ],
+    "paths": {
+      "@/*": [
+        "*"
+      ],
+      "@root/*": [
+        "*"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@shared/*": [
+        "shared/*"
+      ],
+      "@components/*": [
+        "shared/components/*"
+      ],
+      "@ui-components/*": [
+        "shared/ui-components/*"
+      ],
+      "@styles/*": [
+        "shared/styles/*"
+      ]
+    }
+  }
+}
