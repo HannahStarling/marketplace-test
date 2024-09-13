@@ -1,0 +1,107 @@
+@import '@/styles/variables.scss';
+@import "@/styles/mixins.scss";
+@import "@/styles/colors.scss";
+
+.order-history {
+  &__list {
+    @include flex-wrap($gap-medium); // Используем миксин для Flexbox с wrap и gap
+  }
+
+  &__item {
+    display: grid;
+    grid-template-areas: 'icon title title'
+                         'icon date more';
+    gap: $gap-xxsmall $gap-xsmall; // Используем переменные для интервалов
+    align-items: center;
+
+
+    &-icon {
+      grid-area: icon;
+    }
+
+    &-title {
+      grid-area: title;
+    }
+
+    &-date {
+      grid-area: date;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 26px;
+      color: #727280;
+    }
+
+    &-more {
+      grid-area: more;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 15.32px;
+      color: #2967FF;
+    }
+
+    &-info {
+      @include flex-column($gap-none); // Используем миксин для вертикального flex расположения
+
+      &-text {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &.info-text {
+          color: #2D2D2F;
+          font-size: 12px;
+          font-weight: 600;
+          @include truncated(154px);
+
+
+          &.primary {
+            cursor: copy;
+            color: #2967FF;
+          }
+        }
+      }
+
+      &-title {
+        &.info-title {
+          color: #727280;
+          font-size: 12px;
+          font-weight: 500;
+
+
+        }
+      }
+
+      &-container {
+        display: grid;
+        grid-template-areas: 'status order-number order-number'
+                             'amount price address';
+        gap: $gap-medium;
+        padding-bottom: $padding-xlarge;
+      }
+
+      &-status {
+        grid-area: status;
+      }
+
+      &-order-number {
+        grid-area: order-number;
+      }
+
+      &-amount {
+        grid-area: amount;
+      }
+
+      &-price {
+        grid-area: price;
+      }
+
+      &-address {
+        grid-area: address;
+      }
+    }
+  }
+
+  &__accordion-summary {
+    padding: $gap-medium; // Используем переменную для отступа
+  }
+}

@@ -1,0 +1,66 @@
+@import "@/styles/mixins.scss";
+@import '@/styles/variables.scss';
+@import '@/styles/colors.scss';
+
+.order-checkout {
+  &__form {
+    @include flex-wrap(row, wrap, $padding-xlarge);
+
+    @include respond-to(xl) {
+      @include flex-wrap(row, wrap, $padding-large)
+    }
+
+    @include respond-to(lg) {
+      @include flex-wrap(row, wrap, $padding-medium)
+    }
+
+    &-fieldset {
+      border: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-areas: 'legend legend'
+                            'date time';
+    }
+
+    &-legend {
+      grid-area: legend;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 22.4px;
+      text-align: left;
+      color: $primary-dark;
+    }
+  }
+
+
+  &-total {
+    @include flex-column($gap-small);
+
+    width: 292px;
+
+    &__price-box {
+      height: 122px;
+      border-radius: 20px;
+      background: $accent-grey;
+      padding: $padding-small;
+      @include flex-column($gap-xxsmall);
+    }
+
+    &__label {
+      color: $primary-body;
+    }
+
+    &__total {
+      @include flex-space-between(column, center, $gap-xxsmall);
+      padding-top: $gap-xxsmall;
+      color: $primary-body;
+
+      &-value {
+        font-size: $rem-base;
+        font-weight: $font-weight-semi-bold;
+        color: $primary-dark;
+      }
+    }
+  }
+}
