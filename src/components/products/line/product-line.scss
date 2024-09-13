@@ -1,0 +1,154 @@
+@import '@/styles/variables.scss';
+@import "@/styles/mixins.scss";
+@import "@/styles/colors.scss";
+
+.product-line {
+  display: grid;
+  padding: $padding-small 0;
+  border-bottom: 1px solid $primary-border;
+  grid-template-areas: 'image title price amount button-delete';
+  gap: $gap-medium;
+
+  @include respond-to(lg) {
+    grid-template-areas: 'image title title'
+    'price amount button-delete';
+  }
+
+  &__title {
+    grid-area: title;
+
+    &-name {
+      font-size: $rem-base;
+      font-weight: $font-weight-regular;
+      line-height: $line-height-base;
+      color: $primary-dark;
+      @include truncated(300px);
+
+      @include respond-to(md) {
+        @include truncated(150px);
+      }
+    }
+
+    &-variation {
+      color: #00000033;
+      @include truncated(300px);
+      @include respond-to(md) {
+        @include truncated(150px);
+      }
+    }
+
+    &-chip {
+      padding-top: $gap-xxsmall;
+      display: flex;
+      align-items: center;
+      font-size: $font-size-small;
+      font-weight: $font-weight-semi-bold;
+      line-height: $line-height-small;
+
+      @include respond-to(md) {
+        display: none
+      }
+
+      &-bought {
+        margin: 0;
+        margin-left: $gap-xxsmall;
+        font-size: $font-size-small;
+        font-weight: $font-weight-regular;
+        color: $primary-body;
+
+        &-accent {
+          color: $primary-dark;
+          font-weight: $font-weight-semi-bold;
+        }
+      }
+
+      &-item {
+        margin: 0;
+        position: relative;
+        padding: 1px 13px;
+        height: 22px;
+        border-radius: 0 100px 100px 6px;
+        font-size: $font-size-xsmall;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        border: 1px solid $accent-blue;
+
+        &_blue {
+          border-color: $accent-blue;
+          color: $accent-blue;
+          width: 71px;
+          text-align: right;
+        }
+
+        &_pink {
+          border-color: $accent-pink;
+          color: $accent-pink;
+          border-left: none;
+          width: 103px;
+          text-align: right;
+          left: -20px;
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  &__image {
+    grid-area: image;
+    width: 57px;
+    height: 57px;
+    object-fit: contain;
+  }
+
+  &__price {
+    grid-area: price;
+    font-size: $rem-base;
+    font-weight: $font-weight-semi-bold;
+    line-height: $line-height-base;
+    color: $primary-dark;
+  }
+
+  &__amount {
+    grid-area: amount;
+
+    &.quantity {
+      display: flex;
+      align-items: center;
+      border: 1px solid $primary-border;
+      border-radius: $border-radius-small;
+      padding: 12px;
+      max-width: 135px;
+      height: fit-content;
+
+      .quantity {
+        &__button-decrease,
+        &__button-increase {
+          @include icon-button();
+        }
+
+        &__input {
+          padding: 0;
+          color: $primary-dark;
+
+          input {
+            padding: 0;
+            text-align: center;
+          }
+        }
+
+        &__button-decrease-icon,
+        &__button-increase-icon {
+          padding: 0;
+          color: $primary-border;
+        }
+      }
+    }
+  }
+
+  &__button-delete {
+    justify-self: end;
+    grid-area: button-delete;
+    @include icon-button();
+  }
+}

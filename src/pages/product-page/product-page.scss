@@ -1,0 +1,79 @@
+@import '@/styles/variables.scss';
+@import "@/styles/mixins.scss";
+@import "@/styles/colors.scss";
+
+.product {
+  &-menu {
+    display: flex;
+    gap: 107px;
+  }
+
+  &-categories {
+    display: flex;
+    gap: $gap-xxsmall;
+    flex-wrap: wrap;
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(4, 13.375rem);
+    gap: $gap-medium;
+
+    @include respond-to(xl) {
+      grid-template-columns: repeat(3, 13.375rem);
+    }
+
+    @include respond-to(lg) {
+      grid-template-columns: repeat(2, 13.375rem);
+    }
+
+    @include respond-to(md) {
+      grid-template-columns: 13.375rem;
+      justify-content: center;
+    }
+
+    .product-card {
+      background-color: $secondary-white;
+      border: none;
+      box-shadow: none;
+
+      &__button {
+        font-size: $font-size-small;
+        font-weight: $font-weight-regular;
+        width: 100%;
+      }
+
+      &__title {
+        color: $secondary-grey;
+        font-size: $font-size-small;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        min-height: 40px;
+      }
+
+      &__price {
+        font-size: $font-size-medium;
+        font-weight: $font-weight-semi-bold;
+      }
+
+      &__price-info {
+        display: flex;
+        gap: $gap-small;
+      }
+
+      &__old-price {
+        text-decoration: line-through;
+        font-size: $font-size-small;
+        font-weight: $font-weight-regular;
+      }
+
+      &__discount {
+        font-size: $font-size-small;
+        font-weight: $font-weight-semi-bold;
+      }
+    }
+  }
+}
