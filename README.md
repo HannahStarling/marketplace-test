@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# CEZYO тестовое задание
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+При реализации данного микрофронтед сервиса из документации и описания опи не удалось связать вариации с продуктами (комментарии в коде)
 
-## Available Scripts
+getTotalFromContentRange(meta?.response?.headers.get('Content-Range')) - исходя из описания API именно в Headers лежит значение total,
+однако его получить тоже не удалось
 
-In the project directory, you can run:
+Для примеров навыков работы со стилями использованы как кастомные компоненты, так и компоненты MUI с использованием sx-prop/props/styled components
 
-### `npm start`
+## Стек технологий
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React.js
+- Typescript/JavaScript (ES6)
+- SASS
+- Redux ORM
+- RTK Query
+- MUI
+- ESLint airbnb + prettier + react
+- Webpack + Craco
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Структура приложения
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```text
++---public
+|   +---assets - картинки/иконки
+|   |   index.html - базовая html разметка
++---src
+|   +---components (набор бизнес компонентов, большие самодостаточные куски функциональности или интерфейса, обычно реализующие целый пользовательский сценарий)
+|   +---features (повторно используемые реализации целых фич продукта, то есть действий, приносящих бизнес-ценность пользователю)
+|   +---pages (полные страницы или большие части страницы при вложенном роутинге)
+|   +---shared (переиспользуемый код)
+|   |   +---ui-components (тут хранятся переопределения компонентов MUI и др. общие компоненты)
+|   +---styles (общие для всего приложения стили)
+|   +---types (типы)
+|   +---views (бизнес-сущности, с которыми работает проект/обертки передающиебизнес  логику компонентам)
+|   App.js - основной компонент приложения
+|   App.scss - корневые стили
+|   index.js - точка входа в приложение
+.env - переменные окружения
+craco.config.js - настройки сборщика (псевдонимы путей импорта и т.п.)
+webpack.config.js
+```
