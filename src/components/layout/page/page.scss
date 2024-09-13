@@ -1,0 +1,10 @@
+@import '@/styles/variables.scss';
+@import "@/styles/mixins.scss";
+
+.page {
+  @include flex-column();
+
+  &__menu {
+    @include flex-column();
+  }
+}

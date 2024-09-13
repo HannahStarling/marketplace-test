@@ -1,0 +1,51 @@
+@import '@/styles/variables.scss';
+@import "@/styles/mixins.scss";
+@import "@/styles/colors.scss";
+
+.header {
+  grid-area: header;
+  width: 100%;
+  height: $header-height;
+  display: grid;
+  grid-template-columns: 103px 1fr 1fr 50px 30px;
+  justify-content: space-between;
+  align-items: center;
+  gap: $gap-medium;
+  box-sizing: border-box;
+  @include content-padding();
+
+  @include respond-to(lg) {
+    grid-template-columns: 103px 30px 150px 50px;
+    gap: $gap-small;
+  }
+
+  @include respond-to(md) {
+    @include flex-space-between();
+    gap: $gap-xsmall;
+
+    .ui-input-search {
+      display: none;
+    }
+  }
+
+  &__location {
+    @include flex-center(row, center, center, $gap-xsmall);
+    @include respond-to(md) {
+      display: none;
+    }
+
+    &-text {
+      @include respond-to(xl) {
+        @include truncated($max-width-location);
+      }
+    }
+  }
+
+  &__avatar {
+    @include flex-center();
+
+    @include respond-to(lg) {
+      display: none;
+    }
+  }
+}

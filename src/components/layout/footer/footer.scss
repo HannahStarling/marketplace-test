@@ -1,0 +1,113 @@
+@import '@/styles/variables.scss';
+@import "@/styles/mixins.scss";
+@import "@/styles/colors.scss";
+
+.footer {
+  grid-area: footer;
+  background-color: $primary-grey;
+  width: 100%;
+  padding: $padding-medium $padding-large $padding-medium;
+  display: grid;
+  grid-template-areas:
+    'footer__logo footer__info'
+    'footer__copyright footer__copyright';
+  grid-template-columns: 1fr auto;
+  box-sizing: border-box;
+  height: 215px;
+  @include content-padding();
+
+  @include respond-to(md) {
+    grid-template-areas:
+      'footer__logo'
+      'footer__info'
+      'footer__copyright';
+    grid-template-columns: 1fr;
+    padding: $padding-small;
+    height: auto;
+    gap: $gap-xxsmall;
+  }
+
+  &__logo {
+    grid-area: footer__logo;
+
+    @include respond-to(md) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__info {
+    display: flex;
+    gap: $gap-large;
+    grid-area: footer__info;
+    justify-self: end;
+
+    @include respond-to(md) {
+      justify-self: center;
+      gap: $gap-medium;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-social,
+    &-apps {
+      color: $primary-dark;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      gap: $gap-xxsmall;
+
+      @include respond-to(md) {
+        align-items: center;
+      }
+
+      &-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: $gap-medium;
+
+        li {
+          margin: 0;
+        }
+      }
+    }
+
+
+    &-social {
+      &-list {
+        gap: $gap-small;
+      }
+    }
+
+    &-apps {
+      &-list {
+        gap: $gap-medium;
+      }
+    }
+  }
+
+
+  &__copyright {
+    color: $secondary-grey;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $gap-medium;
+    grid-area: footer__copyright;
+
+    li {
+      margin: 0;
+    }
+
+    @include respond-to(md) {
+      flex-direction: column;
+      gap: $gap-xxsmall;
+    }
+  }
+}
